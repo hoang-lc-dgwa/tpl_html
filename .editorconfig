@@ -1,0 +1,43 @@
+# Định dạng mã nguồn cho tất cả các file
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Định dạng mã nguồn cho các file HTML
+[*.html]
+indent_size = 2
+
+# Định dạng mã nguồn cho các file CSS
+[*.css]
+indent_size = 2
+
+# Định dạng mã nguồn cho các file JavaScript
+[*.js]
+indent_size = 2
+
+# Định dạng mã nguồn cho các file JSON
+[*.json]
+indent_size = 2
+
+# Định dạng mã nguồn cho các file Markdown
+[*.md]
+wrap_lines = false
+trim_trailing_whitespace = false
+
+# Định dạng mã nguồn cho các file TypeScript
+[*.ts]
+indent_size = 2
+
+# Định dạng mã nguồn cho các file SCSS
+[*.scss]
+indent_size = 2
+
+# Bỏ qua các file và thư mục không cần thiết
+[**.tmp/**]
+[**.vscode/**]
+[**node_modules/**]
+[**dist/**]
+[**build/**]

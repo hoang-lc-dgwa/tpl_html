@@ -1,0 +1,225 @@
+@use "../accessory/"as *;
+
+:root {
+  scroll-padding-top: 100px;
+
+  @include media-max(sm) {
+    scroll-padding-top: 80px;
+  }
+}
+
+html {
+  font-size: 62.5%;
+
+  @include media-max(md) {
+    font-size: calc(10/1120*100)+vw; //10/1120*100
+  }
+
+  @include media-max(sm) {
+    font-size: calc(10/375*100)+vw; //10/375*100
+  }
+}
+
+body {
+  min-height: 100vh;
+  color: $COLOR_BASE;
+  font-family: $FONT_GOTHIC;
+  @include fz(16, 24);
+  font-weight: 400;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  letter-spacing: 0;
+  text-align: left;
+
+  @include media-max(sm) {
+    @include fz(14, 24);
+
+    &.is-open {
+      overflow: hidden;
+    }
+  }
+}
+
+button:not(:disabled):focus-visible,
+a:not(:disabled):focus-visible,
+pre:not(:disabled):focus-visible,
+input:not(:disabled):focus-visible,
+select:not(:disabled):focus-visible,
+button:not(:disabled):focus-visible,
+textarea:not(:disabled):focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+  transition-duration: 0s;
+}
+
+html.disableScroll body,
+html.disableScroll {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.visually_hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition-duration: 0.3s;
+
+  &:hover {
+    text-decoration: none;
+
+    @include hover() {
+      opacity: $OPACITY_HOVER;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  @include media-max(sm) {
+    &[href^="tel"] {
+      pointer-events: none;
+      text-decoration: none;
+      opacity: 1 !important;
+      cursor: default !important;
+    }
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+input[type="submit"] {
+  border: none;
+  transition-duration: 0.2s;
+}
+
+table {
+  border-spacing: inherit;
+  border-collapse: collapse;
+}
+
+* {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+.image-cover {
+  overflow: hidden;
+
+  img {
+    font-family: "object-fit: cover;";
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hover-zoom {
+  overflow: hidden;
+
+  img {
+    transition: $TRANSITION_BASE;
+  }
+
+  @include hover {
+    a:hover & {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.js-inview {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateY(80px);
+
+  &.is-show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.js-title {
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: "";
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background-color: #fff;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    clip-path: inset(0 0 0 0%);
+    transition: clip-path 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+
+    &:after {
+      clip-path: inset(0 0 0 100%);
+    }
+  }
+}

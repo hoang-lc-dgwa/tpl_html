@@ -1,0 +1,35 @@
+$BREAKPOINTS: (
+  xs: 359px,    // Extra small (> 359px)
+  sm: 767px,    // Small (> 767px)
+  md: 1023px,   // Medium (> 1023px)
+  lg: 1440px,   // Large (> 1440px)
+  xl: 1920px    // Extra large (> 1920px)
+);
+
+$COLOR_BASE: #231815;
+$COLOR_MAIN: #014670;
+$COLOR_BLACK: #000000;
+$COLOR_WHITE: #FFFFFF;
+$COLOR_OVERLAY: rgba(#161B1D, 0.16);
+$SHADOW_BASE: 0 3px 6px $COLOR_OVERLAY;
+
+$TRANSITION_BASE: 0.3s linear;
+$TRANSITION_FADE: 0.8s linear;
+
+$DESIGN_WIDTH_PC: 1920;
+$DESIGN_WIDTH_SP: 375;
+$CONTAINER_WIDTH: 1100px;
+$FZ_PC: 16;
+$FZ_SP: 14;
+$FONT_BASE: 10;
+$LEADING: 1.5;
+$OPACITY_HOVER: 0.75;
+
+$FONT_GOTHIC: "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$FONT_MINCHO: serif;
+
+$Z_PAGETOP: 10;
+$Z_GNAV: 99;
+$Z_HEADER: 100;
+$Z_HAMBURGER: 101;
+$Z_LOADING: 1000;

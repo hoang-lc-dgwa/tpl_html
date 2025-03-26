@@ -1,0 +1,1 @@
+<?php define('_ROOT_DIRECTORY_', '/2025/03/tpl_html/dist');

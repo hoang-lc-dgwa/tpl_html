@@ -1,0 +1,63 @@
+@use "../accessory/" as *;
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-super {
+  vertical-align: super;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@include media-min(sm) {
+  .pc-text-left {
+    text-align: left;
+  }
+
+  .pc-text-center {
+    text-align: center;
+  }
+
+  .pc-text-right {
+    text-align: right;
+  }
+
+  .pc-text-justify {
+    text-align: justify;
+  }
+}
+
+@include media-max(sm) {
+  .sp-text-left {
+    text-align: left;
+  }
+
+  .sp-text-center {
+    text-align: center;
+  }
+
+  .sp-text-right {
+    text-align: right;
+  }
+
+  .sp-text-justify {
+    text-align: justify;
+  }
+}

@@ -1,0 +1,129 @@
+@use "../accessory/" as *;
+
+@for $i from 0 through 20 {
+  .mt-#{$i * 5} {
+    margin-top: 5px * $i !important;
+  }
+
+  .mr-#{$i * 5} {
+    margin-right: 5px * $i !important;
+  }
+
+  .mb-#{$i * 5} {
+    margin-bottom: 5px * $i !important;
+  }
+
+  .ml-#{$i * 5} {
+    margin-left: 5px * $i !important;
+  }
+
+  .pt-#{$i * 5} {
+    padding-top: 5px * $i !important;
+  }
+
+  .pr-#{$i * 5} {
+    padding-right: 5px * $i !important;
+  }
+
+  .pb-#{$i * 5} {
+    padding-bottom: 5px * $i !important;
+  }
+
+  .pl-#{$i * 5} {
+    padding-left: 5px * $i !important;
+  }
+}
+
+@include media-min(sm) {
+  @for $i from 0 through 20 {
+    .pc-mt-#{$i * 5} {
+      margin-top: 5px * $i !important;
+    }
+
+    .pc-mr-#{$i * 5} {
+      margin-right: 5px * $i !important;
+    }
+
+    .pc-mb-#{$i * 5} {
+      margin-bottom: 5px * $i !important;
+    }
+
+    .pc-ml-#{$i * 5} {
+      margin-left: 5px * $i !important;
+    }
+
+    .pc-pt-#{$i * 5} {
+      padding-top: 5px * $i !important;
+    }
+
+    .pc-pr-#{$i * 5} {
+      padding-right: 5px * $i !important;
+    }
+
+    .pc-pb-#{$i * 5} {
+      padding-bottom: 5px * $i !important;
+    }
+
+    .pc-pl-#{$i * 5} {
+      padding-left: 5px * $i !important;
+    }
+  }
+}
+
+@include media-max(sm) {
+  @for $i from 0 through 20 {
+    .sp-mt-#{$i * 5} {
+      margin-top: 5px * $i !important;
+    }
+
+    .sp-mr-#{$i * 5} {
+      margin-right: 5px * $i !important;
+    }
+
+    .sp-mb-#{$i * 5} {
+      margin-bottom: 5px * $i !important;
+    }
+
+    .sp-ml-#{$i * 5} {
+      margin-left: 5px * $i !important;
+    }
+
+    .sp-pt-#{$i * 5} {
+      padding-top: 5px * $i !important;
+    }
+
+    .sp-pr-#{$i * 5} {
+      padding-right: 5px * $i !important;
+    }
+
+    .sp-pb-#{$i * 5} {
+      padding-bottom: 5px * $i !important;
+    }
+
+    .sp-pl-#{$i * 5} {
+      padding-left: 5px * $i !important;
+    }
+  }
+}
+
+@for $i from 0 through 100 {
+  .col-#{$i}p {
+    width: 1% * $i;
+  }
+}
+
+@include media-min(sm) {
+  @for $i from 0 through 100 {
+    .pc-col-#{$i}p {
+      width: 1% * $i;
+    }
+  }
+}
+
+@include media-max(sm) {
+  @for $i from 0 through 100 {
+    .sp-col-#{$i}p {
+      width: 1% * $i;
+    }
+  }
+}

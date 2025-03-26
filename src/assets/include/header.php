@@ -1,0 +1,1 @@
+<?php require_once(dirname(__FILE__) . '/../../config/settings.php'); ?> <header id="header" class="l-header">HEADER</header>

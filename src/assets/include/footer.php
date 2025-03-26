@@ -1,0 +1,1 @@
+<?php require_once(dirname(__FILE__) . '/../../config/settings.php'); ?> <footer id="footer" class="l-footer">FOOTER</footer>

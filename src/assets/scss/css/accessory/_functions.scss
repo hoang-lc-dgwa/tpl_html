@@ -1,0 +1,21 @@
+@use "variables" as *;
+
+@function percentage($DESIGN_WIDTH_PSD) {
+  $percentage: percentage($DESIGN_WIDTH_PSD / $DESIGN_WIDTH_PC);
+  @return #{$percentage};
+}
+
+@function vw($DESIGN_WIDTH_PSD_PC) {
+  $vw: calc($DESIGN_WIDTH_PSD_PC / $DESIGN_WIDTH_PC) * 100;
+  @return #{$vw}vw;
+}
+
+@function vw_sm($DESIGN_WIDTH_PSD_SP) {
+  $vw: calc($DESIGN_WIDTH_PSD_SP / $DESIGN_WIDTH_SP) * 100;
+  @return #{$vw}vw;
+}
+
+@function rem($DESIGN_PX) {
+  $rem: calc($DESIGN_PX / 10);
+  @return $rem+rem;
+}

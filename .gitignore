@@ -1,0 +1,10 @@
+node_modules
+dist
+_dist
+preview
+_preview
+public
+bun.lockb
+ftp/config.json
+.history
+package-lock.json

@@ -1,0 +1,11 @@
+AddType text/html .html
+AddHandler server-parsed .html
+Options Indexes FollowSymLinks Includes
+AddType text/html .shtml .html .htm
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+AddOutputFilter INCLUDES .shtml .html .htm
+AddHandler server-parsed .html
+DirectoryIndex index.html index.htm index.shtml index.php index.cgi
+Options -Indexes
+XBitHack on

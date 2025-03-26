@@ -1,0 +1,90 @@
+@use "sass:map";
+@use "variables" as *;
+
+// For width <= $breakpoint
+@mixin media-max($breakpoint: "sm") {
+  $value: map.get($BREAKPOINTS, $breakpoint);
+
+  @if $value != null {
+    @media (max-width: $value) {
+      @content;
+    }
+  }
+  @else {
+    @warn "⚠️ Warning: Breakpoint '#{$breakpoint}' does not exist in $BREAKPOINTS!";
+  }
+}
+
+// For width > $breakpoint
+@mixin media-min($breakpoint: "sm") {
+  $value: map.get($BREAKPOINTS, $breakpoint);
+
+  @if $value != null {
+    @media (min-width: ($value + 1)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "⚠️ Warning: Breakpoint '#{$breakpoint}' does not exist in $BREAKPOINTS!";
+  }
+}
+
+@mixin hover() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin fz($FONT_SIZE, $LINE_HEIGHT: null) {
+  font-size: calc($FONT_SIZE / 10) + rem;
+
+  @if $LINE_HEIGHT !=null {
+    line-height: calc($LINE_HEIGHT / $FONT_SIZE);
+  }
+}
+
+@mixin nth-load($n: 5) {
+  @include media-min(sm) {
+    @for $i from 1 through $n {
+      &:nth-child(#{$n}n + #{$i}) {
+        $columnIndex: ($i - 1);
+        animation-delay: 0.2s * $columnIndex !important;
+      }
+    }
+  }
+}
+
+@mixin nth-load-md($n: 5) {
+  @include media-max(md) {
+    @for $i from 1 through $n {
+      &:nth-child(#{$n}n + #{$i}) {
+        $columnIndex: ($i - 1);
+        animation-delay: 0.2s * $columnIndex !important;
+      }
+    }
+  }
+}
+
+@mixin nth-load-sm($n: 5) {
+  @include media-max(sm) {
+    @for $i from 1 through $n {
+      &:nth-child(#{$n}n + #{$i}) {
+        $columnIndex: ($i - 1);
+        animation-delay: 0.2s * $columnIndex !important;
+      }
+    }
+  }
+}
+
+@mixin clearfix() {
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
