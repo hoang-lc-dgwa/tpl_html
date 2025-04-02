@@ -2,11 +2,11 @@
 @use "variables" as *;
 
 // For width <= $breakpoint
-@mixin media-max($breakpoint: "sm") {
+@mixin media-max($breakpoint: "md") {
   $value: map.get($BREAKPOINTS, $breakpoint);
 
   @if $value != null {
-    @media (max-width: $value) {
+    @media (max-width: ($value - 1)) {
       @content;
     }
   }
@@ -16,11 +16,11 @@
 }
 
 // For width > $breakpoint
-@mixin media-min($breakpoint: "sm") {
+@mixin media-min($breakpoint: "md") {
   $value: map.get($BREAKPOINTS, $breakpoint);
 
   @if $value != null {
-    @media (min-width: ($value + 1)) {
+    @media (min-width: $value) {
       @content;
     }
   }
@@ -44,7 +44,18 @@
 }
 
 @mixin nth-load($n: 5) {
-  @include media-min(sm) {
+  @include media-min(md) {
+    @for $i from 1 through $n {
+      &:nth-child(#{$n}n + #{$i}) {
+        $columnIndex: ($i - 1);
+        animation-delay: 0.2s * $columnIndex !important;
+      }
+    }
+  }
+}
+
+@mixin nth-load-lg($n: 5) {
+  @include media-max(lg) {
     @for $i from 1 through $n {
       &:nth-child(#{$n}n + #{$i}) {
         $columnIndex: ($i - 1);
@@ -56,17 +67,6 @@
 
 @mixin nth-load-md($n: 5) {
   @include media-max(md) {
-    @for $i from 1 through $n {
-      &:nth-child(#{$n}n + #{$i}) {
-        $columnIndex: ($i - 1);
-        animation-delay: 0.2s * $columnIndex !important;
-      }
-    }
-  }
-}
-
-@mixin nth-load-sm($n: 5) {
-  @include media-max(sm) {
     @for $i from 1 through $n {
       &:nth-child(#{$n}n + #{$i}) {
         $columnIndex: ($i - 1);

@@ -26,7 +26,7 @@
   flex-wrap: wrap;
 }
 
-@include media-min(sm) {
+@include media-min(md) {
   .pc-text-left {
     text-align: left;
   }
@@ -44,7 +44,7 @@
   }
 }
 
-@include media-max(sm) {
+@include media-max(md) {
   .sp-text-left {
     text-align: left;
   }

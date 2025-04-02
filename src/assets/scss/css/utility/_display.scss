@@ -1,13 +1,13 @@
 @use "../accessory/" as *;
 
 .sp {
-  @include media-min(sm) {
+  @include media-min(md) {
     display: none !important;
   }
 }
 
 .pc {
-  @include media-max(sm) {
+  @include media-max(md) {
     display: none !important;
   }
 }
